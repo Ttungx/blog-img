@@ -1,0 +1,11 @@
+name: CDN Sync
+on: [push]
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate CDN Links
+        run: |
+          echo "图片已上传，CDN 链接为："
+          echo "https://cdn.jsdelivr.net/gh/${{ github.repository }}@${{ github.ref_name }}/postimgs1/文件名"
